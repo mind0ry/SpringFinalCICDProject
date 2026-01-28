@@ -4,7 +4,7 @@ pipeline {
 	environment {
 		DOCKER_USER = "mindory0144"
 		IMAGE_NAME = "${DOCKER_USER}/boot-app:latest"
-		//CONTAINER_NAME= "boot-app"
+		CONTAINER_NAME= "boot-app"
 		COMPOSE_FILE = "docker-compose.yml"
 		
 	}
@@ -66,6 +66,17 @@ pipeline {
 				sh '''
 					docker-compose -f ${COMPOSE_FILE} down || true
 			       '''
+			}
+		}
+		
+		stage('Docker Stop And rm') {
+			steps {
+				echo 'docker stop rm'
+				sh '''
+					docker stop ${CONTAINER_NAME} || true
+					docker rm ${CONTAINER_NAME} || true
+					docker pull ${IMAGE_NAME}
+				   '''
 			}
 		}
 		
