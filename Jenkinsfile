@@ -2,9 +2,9 @@ pipeline {
 	agent any 
 	
 	environment {
-		DOCKER_USER = 'mindory0144'
-		IMAGE_NAME= '${DOCKER_USER}/boot-app:latest'
-		CONTAINER_NAME= 'boot-app'
+		DOCKER_USER = "mindory0144"
+		IMAGE_NAME= "${DOCKER_USER}/boot-app:latest"
+		CONTAINER_NAME= "boot-app"
 	}
 	
 	stages {
@@ -43,9 +43,7 @@ pipeline {
 					passwordVariable: 'DOCKER_PW'
 				)]){
 					sh '''
-					    echo "DOCKER_ID=$DOCKER_ID,DOCKER_PWD=$DOCKER_PWD"
-					    
-					    docker login -u $DOCKER_ID --password-stdin
+					    echo $DOCKER_PW | docker login -u $DOCKER_ID --password-stdin
 					   '''
 				}
 			}
