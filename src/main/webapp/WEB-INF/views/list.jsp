@@ -15,7 +15,7 @@
 	margin: 0px auto;
 	width: 960px;
 }
-p {
+p { 
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
