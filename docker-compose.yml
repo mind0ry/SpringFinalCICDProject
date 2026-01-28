@@ -4,4 +4,3 @@ services:
     image: mindory0144/boot-app
     ports:
       - "9090:9090"
-		
