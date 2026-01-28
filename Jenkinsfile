@@ -59,10 +59,10 @@ pipeline {
 
 				sh """
 					ssh -o StrictHostKeyChecking=no ${EC2_USER}@${EC2_HOST} << EOF
-						docker stop awscicd || true
-						docker rm awscicd || true
-						docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
-						docker run --name awscicd -it -d -p 9090:9090 ${DOCKER_IMAGE}:${DOCKER_TAG}
+						sudo docker stop awscicd || true
+						sudo docker rm awscicd || true
+						sudo docker pull ${DOCKER_IMAGE}:${DOCKER_TAG}
+						sudo docker run --name awscicd -it -d -p 9090:9090 ${DOCKER_IMAGE}:${DOCKER_TAG}
 					EOF
 				   """
 				}
