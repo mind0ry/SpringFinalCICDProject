@@ -1,5 +1,5 @@
 pipeline {
-	agent: any 
+	agent any 
 	
 	stages {
 		stage('연결 확인'){
