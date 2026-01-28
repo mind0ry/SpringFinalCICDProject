@@ -71,8 +71,7 @@
           </tr>
           <tr>
            <td class="text-right">
-            <a href="#" class="btn btn-xs btn-primary">찜하기</a>
-            <a href="#" class="btn btn-xs btn-info">예약하기</a>
+            <a href="/find" class="btn btn-xs btn-info">맛집검색</a>
             <a href="javascript:history.back()" class="btn btn-xs btn-warning">목록</a>
            </td>
           </tr>
